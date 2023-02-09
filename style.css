@@ -8,8 +8,8 @@
     --fontSize: 1.8rem;
     --fontSize2: 1.1rem;
     --fontSize1: 1rem;
-    --fontBarlow: 'Barlow', arial, sans-serif;
-    --fontFraunces: 'Fraunces', arial, sans-serif;
+    --fontBarlow: "Barlow", arial, sans-serif;
+    --fontFraunces: "Fraunces", arial, sans-serif;
     --font700: 700;
     --font900: 900;
     --color: rgb(167, 171, 174);
@@ -105,7 +105,7 @@ header .toggle .menu {
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(115%, 0);
-    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 header .toggle .menu li {
@@ -231,7 +231,7 @@ section.four article p {
 }
 
 section.four article a {
-    display: inline-block;
+    position: relative;
     font-weight: var(--font900);
     font-size: var(--fontSize1);
     text-transform: uppercase;
@@ -239,14 +239,31 @@ section.four article a {
     text-decoration: none;
 }
 
-section.four article a .underline {
+/* section.four article a .underline {
     height: 10px;
     margin: -7px -10px 0 -8px;
     border-radius: 30px;
     background-color: rgb(247, 247, 187);
+} 
+
+   section.four article a .pink {
+    background-color: rgb(253, 226, 226);
+} */
+
+section.four article a::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 0;
+    height: 10px;
+    width: 115%;
+    margin-left: -7px;
+    border-radius: 30px;
+    background-color: rgb(247, 247, 187);
+    z-index: -1;
 }
 
-section.four article a .pink {
+section.four article a.pink::after {
     background-color: rgb(253, 226, 226);
 }
 
@@ -292,9 +309,7 @@ section.client h4 {
     color: var(--color);
 }
 
-
 section.client .people {
-
     margin-top: 70px;
 }
 
@@ -331,15 +346,33 @@ section.galery img {
 }
 
 footer {
-    padding: 70px 30px;
+    padding: 50px 0 70px 0;
     text-align: center;
-    background-color: rgb(156, 245, 225);
+    background-color: rgb(144, 225, 208);
 }
 
 footer p {
-    /* font-weight: var(--font900); */
     font-size: 2rem;
-    color: rgb(69, 140, 126);
+    color: rgb(52, 121, 108);
 }
 
-/* color: rgb(69, 140, 126); text */
+footer .about a {
+    display: inline-block;
+    margin: 40px 29px 100px 29px;
+    font-size: var(--fontSize2);
+    font-family: var(--fontBarlow);
+    color: rgb(86, 151, 138);
+    text-decoration: none;
+}
+
+footer .social svg {
+    margin-right: 25px;
+}
+
+footer .social svg:nth-last-child(1) {
+    margin-right: 0;
+}
+
+@media (min-width: 1440px) {
+    
+}
