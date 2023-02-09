@@ -6,18 +6,20 @@
 
 :root {
     --fontSize: 1.8rem;
-    --FontBarlow: 'Barlow', arial, sans-serif;
-    --FontFraunces: 'Fraunces', arial, sans-serif;
+    --fontSize2: 1.1rem;
+    --fontSize1: 1rem;
+    --fontBarlow: 'Barlow', arial, sans-serif;
+    --fontFraunces: 'Fraunces', arial, sans-serif;
     --font700: 700;
     --font900: 900;
-    --color: rgb(162, 160, 160);
-    --colorClient: rgb(121, 118, 118);
+    --color: rgb(167, 171, 174);
+    --colorClient: rgb(90, 99, 108);
     --colorCyan: rgb(37, 86, 75);
 }
 
 body {
     font-size: 10px;
-    font-family: var(--FontFraunces);
+    font-family: var(--fontFraunces);
 }
 
 header {
@@ -108,7 +110,7 @@ header .toggle .menu {
 
 header .toggle .menu li {
     margin-bottom: 32px;
-    font-family: var(--FontBarlow);
+    font-family: var(--fontBarlow);
     font-size: 1.3rem;
 }
 
@@ -119,7 +121,7 @@ header .toggle .menu a:nth-last-child(1) li {
     border-radius: 30px;
     line-height: 300%;
     text-transform: uppercase;
-    font-family: var(--FontFraunces);
+    font-family: var(--fontFraunces);
     font-weight: var(--font700);
     font-size: 1.1rem;
     color: black;
@@ -216,13 +218,14 @@ section.four article {
 section.four article h2 {
     margin-bottom: 30px;
     font-size: 2rem;
+    color: rgb(35, 48, 62);
     font-weight: var(--font900);
 }
 
 section.four article p {
     margin-bottom: 30px;
-    font-family: var(--FontBarlow);
-    font-size: 1.1rem;
+    font-family: var(--fontBarlow);
+    font-size: var(--fontSize2);
     line-height: 170%;
     color: var(--color);
 }
@@ -230,7 +233,7 @@ section.four article p {
 section.four article a {
     display: inline-block;
     font-weight: var(--font900);
-    font-size: 1rem;
+    font-size: var(--fontSize1);
     text-transform: uppercase;
     color: black;
     text-decoration: none;
@@ -262,7 +265,7 @@ section.two .mandarin {
 
 section.two .text {
     padding: 390px 20px 0 20px;
-    font-size: 1rem;
+    font-size: var(--fontSize1);
     text-align: center;
     color: var(--colorCyan);
     line-height: 170%;
@@ -274,17 +277,69 @@ section.two h3 {
 
 section.two p {
     padding-top: 30px;
-    font-family: var(--FontBarlow);
+    font-family: var(--fontBarlow);
 }
 
 section.client {
-    padding: 60px 20px 80px;
+    padding: 60px 25px 90px;
     text-align: center;
 }
 
 section.client h4 {
-    font-size: 1rem;
+    font-size: var(--fontSize1);
     text-transform: uppercase;
     letter-spacing: 4px;
-color: var(--color);
-} 
+    color: var(--color);
+}
+
+
+section.client .people {
+
+    margin-top: 70px;
+}
+
+section.client img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+section.client .description {
+    margin: 30px 0;
+    font-family: var(--fontBarlow);
+    font-size: var(--fontSize2);
+    line-height: 170%;
+    color: var(--colorClient);
+}
+
+section.client .name {
+    margin-bottom: 10px;
+    font-size: var(--fontSize2);
+}
+
+section.client .prof {
+    font-size: 0.9rem;
+    font-family: var(--fontBarlow);
+    color: var(--color);
+}
+
+section.galery {
+    font-size: 0;
+}
+
+section.galery img {
+    width: 50vw;
+}
+
+footer {
+    padding: 70px 30px;
+    text-align: center;
+    background-color: rgb(156, 245, 225);
+}
+
+footer p {
+    /* font-weight: var(--font900); */
+    font-size: 2rem;
+    color: rgb(69, 140, 126);
+}
+
+/* color: rgb(69, 140, 126); text */
