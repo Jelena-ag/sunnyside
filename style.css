@@ -512,7 +512,7 @@ footer .social a:nth-last-child(1) {
 
     section.two .bg {
         width: 50vw;
-        height: 42vh;
+        height: auto;
         background-image: url(images/desktop/image-graphic-design.jpg);
     }
 
@@ -521,7 +521,7 @@ footer .social a:nth-last-child(1) {
     }
 
     section.two .text {
-        padding: 410px 180px 0;
+        padding: 410px 180px 40px;
     }
 
     section.client {
