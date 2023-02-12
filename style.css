@@ -1,3 +1,5 @@
+/* Mobile: 375px
+Desktop: 1440px */
 * {
     margin: 0;
     padding: 0;
@@ -23,12 +25,16 @@ body {
 }
 
 header {
-    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 77vh;
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
     background-image: url(images/mobile/image-header.jpg);
+    overflow: hidden;
 }
 
 header p {
@@ -38,13 +44,10 @@ header p {
     color: white;
 }
 
-/* Hamburger Menu */
-
 header .toggle {
     position: absolute;
     top: 30px;
     right: 32px;
-    /* overflow: hidden; */
 }
 
 header .toggle input {
@@ -90,33 +93,38 @@ header .toggle input:checked~span:nth-last-child(3) {
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-header .toggle input:checked~ul {
+header .toggle input:checked~.menu {
     transform: none;
 }
 
 header .toggle .menu {
-    position: absolute;
     width: 305px;
     margin: 40px 0 0 -285px;
     padding: 40px 80px;
     text-align: center;
     background: white;
-    list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(115%, 0);
     transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-header .toggle .menu li {
+header .toggle .menu a {
+    display: block;
     margin-bottom: 32px;
     font-family: var(--fontBarlow);
     font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color);
 }
 
-header .toggle .menu a:nth-last-child(1) li {
+header .toggle .menu a:hover {
+    color: black;
+}
+
+header .toggle .menu a:nth-last-child(1) {
     margin-bottom: 0;
-    border: 1px solid rgb(250, 212, 0);
+    border-style: none;
     background-color: rgb(250, 212, 0);
     border-radius: 30px;
     line-height: 300%;
@@ -126,17 +134,6 @@ header .toggle .menu a:nth-last-child(1) li {
     font-size: 1.1rem;
     color: black;
 }
-
-header .toggle a {
-    text-decoration: none;
-    color: var(--color);
-}
-
-header .toggle a:hover {
-    color: black;
-}
-
-/* ----------------- */
 
 h1 {
     margin-top: 20%;
@@ -238,17 +235,6 @@ section.four article a {
     color: black;
     text-decoration: none;
 }
-
-/* section.four article a .underline {
-    height: 10px;
-    margin: -7px -10px 0 -8px;
-    border-radius: 30px;
-    background-color: rgb(247, 247, 187);
-} 
-
-   section.four article a .pink {
-    background-color: rgb(253, 226, 226);
-} */
 
 section.four article a::after {
     content: "";
@@ -365,14 +351,225 @@ footer .about a {
     text-decoration: none;
 }
 
-footer .social svg {
+footer .social a {
     margin-right: 25px;
 }
 
-footer .social svg:nth-last-child(1) {
+footer .social a:nth-last-child(1) {
     margin-right: 0;
 }
 
 @media (min-width: 1440px) {
-    
+    header {
+        height: 850px;
+        background-image: url(images/desktop/image-header.jpg);
+    }
+
+    header p {
+        padding: 40px 0 0 40px;
+        font-size: 2.3rem;
+    }
+
+    header .toggle input,
+    header .toggle span {
+        display: none;
+    }
+
+    header .toggle .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0;
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    header .toggle .menu a {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: 50px;
+        color: white;
+    }
+
+    header .toggle .menu a:nth-last-child(1) {
+        background-color: white;
+        padding: 0 30px;
+        font-size: var(--fontSize1);
+    }
+
+    header .toggle .menu a:hover:nth-last-child(1) {
+        color: white;
+        background-color: lightskyblue;
+    }
+
+    h1 {
+        margin-top: 7%;
+        font-size: 3.4rem;
+        letter-spacing: 10px;
+        font-weight: var(--font900);
+    }
+
+    div.arrow {
+        margin-top: 85px;
+    }
+
+    @keyframes shakes {
+        0% {
+            margin-top: 105px;
+        }
+
+        90% {
+            margin-top: 105px;
+        }
+
+        91% {
+            margin-top: 95px;
+        }
+
+        92% {
+            margin-top: 105px;
+        }
+
+        93% {
+            margin-top: 95px;
+        }
+
+        94% {
+            margin-top: 105px;
+        }
+
+        95% {
+            margin-top: 95px;
+        }
+
+        96% {
+            margin-top: 105px;
+        }
+
+        97% {
+            margin-top: 95px;
+        }
+
+        98% {
+            margin-top: 105px;
+        }
+
+        99% {
+            margin-top: 95px;
+        }
+
+        100% {
+            margin-top: 105px;
+        }
+    }
+
+    section.four {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    section.four img {
+        width: 50%;
+        order: 2;
+    }
+
+    section.four img.one,
+    section.four article.one {
+        order: 2;
+    }
+
+    section.four article {
+        width: 50%;
+        order: 1;
+        text-align: left;
+        padding: 150px 115px;
+    }
+
+    section.four article h2 {
+        margin: 0;
+        padding: 0 15px;
+        font-size: 2.5rem;
+    }
+
+    section.four article p {
+        margin: 40px 0;
+        font-size: 1.2rem;
+        color: rgb(141, 144, 147);
+    }
+
+    section.four article a:hover::after {
+        background-color: rgb(250, 212, 0);
+    }
+
+    section.four article a.pink:hover::after {
+        background-color: rgb(254, 120, 103);
+    }
+
+    section.two {
+        display: flex;
+    }
+
+    section.two .bg {
+        width: 50vw;
+        height: 42vh;
+        background-image: url(images/desktop/image-graphic-design.jpg);
+    }
+
+    section.two .mandarin {
+        background-image: url(images/desktop/image-photography.jpg);
+    }
+
+    section.two .text {
+        padding: 410px 180px 0;
+    }
+
+    section.client {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 160px 85px;
+    }
+
+    section.client h4 {
+        flex-shrink: 0;
+        width: 100%;
+        font-size: 1.3rem;
+    }
+
+    section.client .people {
+        width: calc(100%/3);
+    }
+
+    section.client .description {
+        margin: 50px 50px 60px;
+    }
+
+    section.galery {
+        display: flex;
+    }
+
+    section.galery img {
+        width: calc(100%/4);
+        height: 400px;
+    }
+
+    footer {
+        padding: 50px 0 70px 0;
+        text-align: center;
+        background-color: rgb(144, 225, 208);
+    }
+
+    footer p {
+        font-size: 2rem;
+        color: rgb(52, 121, 108);
+    }
+
+    footer .about a,
+    footer .social a {
+        cursor: pointer;
+    }
+
+    footer .about a:hover {
+        color: white;
+    }
 }
