@@ -370,6 +370,7 @@ section.galery img {
 }
 
 @media (min-width: 1440px) {
+    
     body {
         max-width: 1440px;
         margin: auto;
