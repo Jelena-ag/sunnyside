@@ -24,12 +24,23 @@ body {
     font-family: var(--fontFraunces);
 }
 
-header {
+div.grid-wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(520px, 1fr)) / 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.header {
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 77vh;
+    grid-area: header;
+    display: grid;
+    grid-template: minmax(auto, 110px) minmax(auto, 160px) 1fr / 1fr minmax(auto, 440px) minmax(auto, 1000px) 1fr;
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -37,20 +48,21 @@ header {
     overflow: hidden;
 }
 
-header p {
-    display: inline-block;
-    padding: 20px 0 0 30px;
-    font-size: var(--fontSize);
+.header p {
+    grid-column: 2 / 3;
+    padding: 20px;
+    font-size: 1.6rem;
     color: white;
 }
 
-header .toggle {
+.header .toggle {
+    grid-column: 3 / 4;
     position: absolute;
     top: 30px;
     right: 32px;
 }
 
-header .toggle input {
+.header .toggle input {
     position: absolute;
     width: 25px;
     height: 25px;
@@ -60,7 +72,7 @@ header .toggle input {
     opacity: 0;
 }
 
-header .toggle span {
+.header .toggle span {
     display: block;
     width: 25px;
     height: 2px;
@@ -70,34 +82,34 @@ header .toggle span {
     transform-origin: 4px 0px;
 }
 
-header .toggle span:first-child {
+.header .toggle span:first-child {
     transform-origin: 0% 0%;
 }
 
-header .toggle span:nth-last-child(2) {
+.header .toggle span:nth-last-child(2) {
     transform-origin: 0% 100%;
 }
 
-header .toggle input:checked~span {
+.header .toggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-1px, 0);
     background: #232323;
 }
 
-header .toggle input:checked~span:nth-last-child(2) {
+.header .toggle input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, 0);
 }
 
-header .toggle input:checked~span:nth-last-child(3) {
+.header .toggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-header .toggle input:checked~.menu {
+.header .toggle input:checked~.menu {
     transform: none;
 }
 
-header .toggle .menu {
+.header .toggle .menu {
     width: 305px;
     margin: 40px 0 0 -285px;
     padding: 40px 80px;
@@ -109,7 +121,7 @@ header .toggle .menu {
     transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-header .toggle .menu a {
+.header .toggle .menu a {
     display: block;
     margin-bottom: 32px;
     font-family: var(--fontBarlow);
@@ -118,11 +130,11 @@ header .toggle .menu a {
     color: var(--color);
 }
 
-header .toggle .menu a:hover {
+.header .toggle .menu a:hover {
     color: black;
 }
 
-header .toggle .menu a:nth-last-child(1) {
+.header .toggle .menu a:nth-last-child(1) {
     margin-bottom: 0;
     border-style: none;
     background-color: rgb(250, 212, 0);
@@ -135,91 +147,89 @@ header .toggle .menu a:nth-last-child(1) {
     color: black;
 }
 
-h1 {
-    margin-top: 20%;
-    font-size: 2.6rem;
+.header h1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
     text-align: center;
+    font-size: 2.6rem;
     text-transform: uppercase;
     letter-spacing: 7px;
     color: white;
 }
 
-div.arrow {
-    margin-top: 35px;
+.header div.arrow {
+    grid-column-start: 2;
+    grid-column-end: 4;
     text-align: center;
     animation: shakes 3s linear infinite;
 }
 
 @keyframes shakes {
-    0% {
-        margin-top: 35px;
-    }
-
     90% {
-        margin-top: 35px;
+        margin-top: 0;
     }
 
     91% {
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     92% {
-        margin-top: 35px;
+        margin-top: 0;
     }
 
     93% {
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     94% {
-        margin-top: 35px;
+        margin-top: 0;
     }
 
     95% {
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     96% {
-        margin-top: 35px;
+        margin-top: 0;
     }
 
     97% {
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     98% {
-        margin-top: 35px;
+        margin-top: 0;
     }
 
     99% {
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     100% {
-        margin-top: 35px;
+        margin-top: 0;
     }
 }
 
-section.four {
+.main section.four {
     text-align: center;
 }
 
-section.four img {
+.main section.four img {
     width: 100%;
 }
 
-section.four article {
+.main section.four article {
     padding: 60px 25px;
 }
 
-section.four article h2 {
+.main section.four article h2 {
     margin-bottom: 30px;
     font-size: 2rem;
     color: rgb(35, 48, 62);
     font-weight: var(--font900);
 }
 
-section.four article p {
+.main section.four article p {
     margin-bottom: 30px;
     font-family: var(--fontBarlow);
     font-size: var(--fontSize2);
@@ -227,7 +237,7 @@ section.four article p {
     color: var(--color);
 }
 
-section.four article a {
+.main section.four article a {
     position: relative;
     font-weight: var(--font900);
     font-size: var(--fontSize1);
@@ -236,7 +246,7 @@ section.four article a {
     text-decoration: none;
 }
 
-section.four article a::after {
+.main section.four article a::after {
     content: "";
     position: absolute;
     top: 13px;
@@ -249,24 +259,24 @@ section.four article a::after {
     z-index: -1;
 }
 
-section.four article a.pink::after {
+.main section.four article a.pink::after {
     background-color: rgb(253, 226, 226);
 }
 
-section.two .bg {
-    width: 100vw;
-    height: 87vh;
+.main section.two .bg {
+    width: 100%;
+    height: 580px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(images/mobile/image-graphic-design.jpg);
 }
 
-section.two .mandarin {
+.main section.two .mandarin {
     background-image: url(images/mobile/image-photography.jpg);
 }
 
-section.two .text {
+.main section.two .text {
     padding: 390px 20px 0 20px;
     font-size: var(--fontSize1);
     text-align: center;
@@ -274,37 +284,37 @@ section.two .text {
     line-height: 170%;
 }
 
-section.two h3 {
+.main section.two h3 {
     font-size: var(--fontSize);
 }
 
-section.two p {
+.main section.two p {
     padding-top: 30px;
     font-family: var(--fontBarlow);
 }
 
-section.client {
+.main section.client {
     padding: 60px 25px 90px;
     text-align: center;
 }
 
-section.client h4 {
+.main section.client h4 {
     font-size: var(--fontSize1);
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--color);
 }
 
-section.client .people {
+.main section.client .people {
     margin-top: 70px;
 }
 
-section.client img {
+.main section.client img {
     width: 70px;
     border-radius: 50%;
 }
 
-section.client .description {
+.main section.client .description {
     margin: 30px 0;
     font-family: var(--fontBarlow);
     font-size: var(--fontSize2);
@@ -312,12 +322,12 @@ section.client .description {
     color: var(--colorClient);
 }
 
-section.client .name {
+.main section.client .name {
     margin-bottom: 10px;
     font-size: var(--fontSize2);
 }
 
-section.client .prof {
+.main section.client .prof {
     font-size: 0.9rem;
     font-family: var(--fontBarlow);
     color: var(--color);
@@ -328,248 +338,194 @@ section.galery {
 }
 
 section.galery img {
-    width: 50vw;
+    width: 50%;
 }
 
-footer {
-    padding: 50px 0 70px 0;
+.footer {
+    padding: 50px 0;
     text-align: center;
     background-color: rgb(144, 225, 208);
 }
 
-footer p {
+.footer p {
     font-size: 2rem;
     color: rgb(52, 121, 108);
 }
 
-footer .about a {
+.footer .about a {
     display: inline-block;
-    margin: 40px 29px 100px 29px;
+    margin: 40px 30px 80px 30px;
     font-size: var(--fontSize2);
     font-family: var(--fontBarlow);
     color: rgb(86, 151, 138);
     text-decoration: none;
 }
 
-footer .social a {
+.footer .social a {
     margin-right: 25px;
 }
 
-footer .social a:nth-last-child(1) {
+.footer .social a:nth-last-child(1) {
     margin-right: 0;
 }
 
 @media (min-width: 1440px) {
-    header {
-        height: 850px;
+    body {
+        max-width: 1440px;
+        margin: auto;
+        background-color: rgb(230, 247, 254);
+        background-image: radial-gradient(white 15%, transparent 16%),
+            radial-gradient(white 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+    }
+
+    .header {
+        height: 700px;
         background-image: url(images/desktop/image-header.jpg);
     }
 
-    header p {
-        padding: 40px 0 0 40px;
+    .header p {
+        padding-left: 50px;
         font-size: 2.3rem;
     }
 
-    header .toggle input,
-    header .toggle span {
+    .header .toggle input,
+    .header .toggle span {
         display: none;
     }
 
-    header .toggle .menu {
+    .header .toggle .menu {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 0;
         padding: 0;
-        margin-top: 5px;
+        margin-top: -8px;
     }
 
-    header .toggle .menu a {
+    .header .toggle .menu a {
         display: inline-block;
         margin-bottom: 0;
         margin-right: 50px;
         color: white;
     }
 
-    header .toggle .menu a:nth-last-child(1) {
-        background-color: white;
+    .header .toggle .menu a:nth-last-child(1) {
+        margin-right: 0;
         padding: 0 30px;
         font-size: var(--fontSize1);
+        background-color: white;
     }
 
-    header .toggle .menu a:hover:nth-last-child(1) {
+    .header .toggle .menu a:hover:nth-last-child(1) {
         color: white;
         background-color: lightskyblue;
     }
 
     h1 {
-        margin-top: 7%;
+        margin-top: 30px;
         font-size: 3.4rem;
         letter-spacing: 10px;
         font-weight: var(--font900);
     }
 
-    div.arrow {
-        margin-top: 85px;
+    .main {
+        grid-area: main;
     }
 
-    @keyframes shakes {
-        0% {
-            margin-top: 105px;
-        }
-
-        90% {
-            margin-top: 105px;
-        }
-
-        91% {
-            margin-top: 95px;
-        }
-
-        92% {
-            margin-top: 105px;
-        }
-
-        93% {
-            margin-top: 95px;
-        }
-
-        94% {
-            margin-top: 105px;
-        }
-
-        95% {
-            margin-top: 95px;
-        }
-
-        96% {
-            margin-top: 105px;
-        }
-
-        97% {
-            margin-top: 95px;
-        }
-
-        98% {
-            margin-top: 105px;
-        }
-
-        99% {
-            margin-top: 95px;
-        }
-
-        100% {
-            margin-top: 105px;
-        }
-    }
-
-    section.four {
+    .main section.four {
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
     }
 
-    section.four img {
+    .main section.four img,
+    .main section.four article {
         width: 50%;
-        order: 2;
     }
 
-    section.four img.one,
-    section.four article.one {
-        order: 2;
+    .main section.four article.one {
+        order: -1;
     }
 
-    section.four article {
-        width: 50%;
-        order: 1;
-        text-align: left;
+    .main section.four article {
         padding: 150px 115px;
+        text-align: left;
+        background-color: #fff;
+        z-index: 2;
     }
 
-    section.four article h2 {
-        margin: 0;
-        padding: 0 15px;
+    .main section.four article h2 {
+        padding-right: 45px;
         font-size: 2.5rem;
     }
 
-    section.four article p {
+    .main section.four article p {
         margin: 40px 0;
         font-size: 1.2rem;
         color: rgb(141, 144, 147);
     }
 
-    section.four article a:hover::after {
+    .main section.four article a:hover::after {
         background-color: rgb(250, 212, 0);
     }
 
-    section.four article a.pink:hover::after {
+    .main section.four article a.pink:hover::after {
         background-color: rgb(254, 120, 103);
     }
 
-    section.two {
+    .main section.two {
         display: flex;
     }
 
-    section.two .bg {
-        width: 50vw;
-        height: auto;
+    .main section.two .bg {
+        width: 50%;
         background-image: url(images/desktop/image-graphic-design.jpg);
     }
 
-    section.two .mandarin {
+    .main section.two .mandarin {
         background-image: url(images/desktop/image-photography.jpg);
     }
 
-    section.two .text {
-        padding: 410px 180px 40px;
+    .main section.two p {
+        padding: 30px 170px 0 170px;
     }
 
-    section.client {
+    .main section.client {
         display: flex;
         flex-wrap: wrap;
-        padding: 160px 85px;
+        padding: 150px 85px;
+        background-color: #fff;
     }
 
-    section.client h4 {
-        flex-shrink: 0;
+    .main section.client h4 {
         width: 100%;
         font-size: 1.3rem;
     }
 
-    section.client .people {
+    .main section.client .people {
         width: calc(100%/3);
     }
 
-    section.client .description {
-        margin: 50px 50px 60px;
+    .main section.client .description {
+        margin: 50px 45px 60px;
     }
 
-    section.galery {
-        display: flex;
-    }
-
-    section.galery img {
+    .main section.galery img {
         width: calc(100%/4);
         height: 400px;
     }
 
-    footer {
-        padding: 50px 0 70px 0;
-        text-align: center;
-        background-color: rgb(144, 225, 208);
+    .footer {
+        grid-area: footer;
     }
 
-    footer p {
-        font-size: 2rem;
-        color: rgb(52, 121, 108);
-    }
-
-    footer .about a,
-    footer .social a {
+    .footer .about a,
+    .footer .social a {
         cursor: pointer;
     }
 
-    footer .about a:hover {
+    .footer .about a:hover {
         color: white;
     }
 }
