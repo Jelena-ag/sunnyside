@@ -165,7 +165,9 @@ div.grid-wrapper {
 }
 
 @keyframes shakes {
-    100% {transform: translate(0px, 8px);}
+    100% {
+        transform: translate(0px, 8px);
+    }
 }
 
 .main section.four {
@@ -464,6 +466,15 @@ section.galery img {
 
     .main section.client .people {
         width: calc(100%/3);
+        cursor: pointer;
+    }
+
+    .main section.client img {
+        transition: all 0.3s linear;
+    }
+
+    .main section.client .people:hover img {
+        transform: scale(1.5);
     }
 
     .main section.client .description {
@@ -473,6 +484,11 @@ section.galery img {
     .main section.galery img {
         width: calc(100%/4);
         height: 400px;
+        cursor: pointer;
+    }
+
+    section.galery img:hover {
+        transform: scale(1, -1);
     }
 
     .footer {
