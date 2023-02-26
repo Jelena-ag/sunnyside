@@ -41,8 +41,8 @@
     </header>
     <main class="main">
       <section class="four">
-        <img class="one" src="images/desktop/image-transform.jpg"
-          srcset="images/mobile/image-transform.jpg 375w, images/desktop/image-transform.jpg 1440w" loading="lazy" alt="yellow egg"
+        <img src="images/mobile/image-transform.jpg" srcset="images/mobile/image-transform.jpg 375w,
+          images/desktop/image-transform.jpg 1440w" loading="lazy" alt="yellow egg"
           title="yellow egg on yellow background">
         <article class="one">
           <h2>Transform your brand</h2>
@@ -54,9 +54,9 @@
           <a href="#"> Learn more
           </a>
         </article>
-        <img src="images/desktop/image-stand-out.jpg"
-          srcset="images/mobile/image-stand-out.jpg 375w, images/desktop/image-stand-out.jpg 1440w" loading="lazy"
-          alt="pink glass" title="pink glass on pink background">
+        <img src="images/mobile/image-stand-out.jpg" srcset="images/mobile/image-stand-out.jpg 375w, 
+          images/desktop/image-stand-out.jpg 1440w" loading="lazy" alt="pink glass"
+          title="pink glass on pink background">
         <article>
           <h2>Stand out to the right audience</h2>
           <p>
@@ -119,16 +119,24 @@
         </article>
       </section>
       <section class="galery">
-        <source srcset="images/desktop/image-gallery-milkbottles" media="(min-width: 1440px)">
-        <img src="images/mobile/image-gallery-milkbottles.jpg" loading="lazy" alt="milkbottles"
-          title="milkbottles in the sky" />
-        <source srcset="images/desktop/image-gallery-orange" media="(min-width: 1440px)">
-        <img src="images/mobile/image-gallery-orange.jpg" loading="lazy" alt="orange"
-          title="half an orange on a plate" />
-        <source srcset="images/desktop/image-gallery-cone" media="(min-width: 1440px)">
-        <img src="images/mobile/image-gallery-cone.jpg" loading="lazy" alt="cone" title="cone on blue" />
-        <source srcset="images/desktop/image-gallery-sugar-cubes" media="(min-width: 1440px)">
-        <img src="images/mobile/image-gallery-sugar-cubes.jpg" loading="lazy" alt="sugar" title="sugar cubes on pink" />
+        <picture>
+          <source media="(max-width: 1439px)" srcset="images/mobile/image-gallery-milkbottles.jpg">
+          <img src="images/desktop/image-gallery-milkbottles.jpg" loading="lazy" alt="milkbottles"
+            title="milkbottles in the sky">
+        </picture>
+        <picture>
+          <source media="(max-width: 1439px)" srcset="images/mobile/image-gallery-orange.jpg">
+          <img src="images/desktop/image-gallery-orange.jpg" loading="lazy" alt="orange"
+            title="half an orange on a plate">
+        </picture>
+        <picture>
+          <source media="(max-width: 1439px)" srcset="images/mobile/image-gallery-cone.jpg">
+          <img src="images/desktop/image-gallery-cone.jpg" loading="lazy" alt="cone" title="cone on blue">
+        </picture>
+        <picture>
+          <source media="(max-width: 1439px)" srcset="images/mobile/image-gallery-sugar-cubes.jpg">
+          <img src="images/desktop/image-gallery-sugarcubes.jpg" loading="lazy" alt="sugar" title="sugar cubes on pink">
+        </picture>
       </section>
     </main>
     <footer class="footer">
