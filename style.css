@@ -161,53 +161,11 @@ div.grid-wrapper {
     grid-column-start: 2;
     grid-column-end: 4;
     text-align: center;
-    animation: shakes 3s linear infinite;
+    animation: shakes 0.2s linear infinite;
 }
 
 @keyframes shakes {
-    90% {
-        margin-top: 0;
-    }
-
-    91% {
-        margin-top: 10px;
-    }
-
-    92% {
-        margin-top: 0;
-    }
-
-    93% {
-        margin-top: 10px;
-    }
-
-    94% {
-        margin-top: 0;
-    }
-
-    95% {
-        margin-top: 10px;
-    }
-
-    96% {
-        margin-top: 0;
-    }
-
-    97% {
-        margin-top: 10px;
-    }
-
-    98% {
-        margin-top: 0;
-    }
-
-    99% {
-        margin-top: 10px;
-    }
-
-    100% {
-        margin-top: 0;
-    }
+    100% {transform: translate(0px, 8px);}
 }
 
 .main section.four {
@@ -370,7 +328,7 @@ section.galery img {
 }
 
 @media (min-width: 1440px) {
-    
+
     body {
         max-width: 1440px;
         margin: auto;
