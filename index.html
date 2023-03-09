@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sunnyside</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap"
     rel="stylesheet" />
-  <title>sunnyside</title>
+  <script src="https://kit.fontawesome.com/b8589debcc.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -17,18 +18,28 @@
   <div class="grid-wrapper">
     <header class="header">
       <p>sunnyside</p>
-      <menu class="toggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <nav class="menu">
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-        </nav>
-      </menu>
+
+      <!-- 1. nie wyświetla sie na stronie druga ikonka fa-xmark, ale fa-times dziala
+  2. na ikonkach nie dziala - fa-thin
+  5. przy naciskaniu na burger nie wyjezdza menu
+ -->
+
+      <div class="burger">
+        <i class="fas fa-thin fa-bars show"></i>
+        <i class="fas fa-times "></i>
+        <!-- <i class="fas fa-thin fa-xmark"></i> -->
+      </div>
+      <nav class="menu">
+        <div class="triangle"></div>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </nav>
+
+
+
+
       <h1>We are creatives</h1>
       <div class="arrow">
         <svg width="36" height="114" xmlns="http://www.w3.org/2000/svg">
@@ -170,7 +181,9 @@
       </nav>
     </footer>
   </div>
+  <script src="script.js"></script>
 </body>
+
 
 </html>
 <!-- https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef
